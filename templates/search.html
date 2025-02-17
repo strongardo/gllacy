@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search</title>
+</head>
+<body>
+<form action="{% url 'search' %}">
+    <input type="search" name="search_value">
+    <button type="submit">Search</button>
+</form>
+<br>
+<br>
+
+{% if products %}
+<ul>
+    {% for product in products %}
+    {% include 'product_card.html' %}
+    {% endfor %}
+</ul>
+{% endif %}
+
+</body>
+</html>

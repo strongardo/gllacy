@@ -1,0 +1,64 @@
+.range_wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 200px;
+    background-color: #93a99d;
+}
+.range {
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 219px;
+    height: 36px;
+    border: none;
+    padding: 0;
+
+    color: #fff;
+    background-color: #aabcb2;
+    border-radius: 35px;
+}
+
+.range_title {
+    position: absolute;
+    top: -25px;
+    left: 7px;
+}
+
+/* Стиль для слайдера */
+#price-slider {
+    width: 176px;
+    height: 4px;
+}
+
+/* Стили ползунков */
+.noUi-horizontal .noUi-handle {
+    top: -9px;
+
+    width: 20px;
+    height: 20px;
+    border: none;
+
+    border-radius: 50%;
+    background-image: url('../images/filter-button.png');
+    cursor: pointer;
+}
+
+/* Декоративные полоски на ползунках */
+.noUi-handle:after, .noUi-handle:before {
+    display: none;
+}
+
+/* Линия слайдера */
+.noUi-target, .noUi-base {
+    background: #d1dad3; /* Цвет линии */
+    border-radius: 0;
+}
+
+.noUi-connect {
+    background-color: #f8f7f4; /* Цвет соединённой части */
+}

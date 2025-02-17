@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Home{% endblock %}
+{% block body_class %}home_body{% endblock %}
+{% block content %}
+<main>
+    <h1>Home</h1>
+
+    <ul>
+        {% for product in hits %}
+        {% include 'product_card.html' %}
+        {% endfor %}
+    </ul>
+
+    <form method="post" action="{% url 'newsletter' %}">
+        {% csrf_token %}
+        <input type="email" name="email">
+        <button type="submit">Submit</button>
+    </form>
+    <br>
+    <br>
+    <form method="post" action="{% url 'feedback' %}">
+        {% csrf_token %}
+        <input type="text" name="name">
+        <input type="email" name="email">
+        <textarea name="message"></textarea>
+        <button type="submit">Submit</button>
+    </form>
+</main>
+{% endblock %}

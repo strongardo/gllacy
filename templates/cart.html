@@ -1,0 +1,32 @@
+{% if cart_items %}
+<table>
+    {% for item in cart_items %}
+    <tr>
+        <td>
+            <a href="{% url 'del_from_cart' item.product.id %}" class="del-from-cart">Удалить</a>
+        </td>
+
+        <td>
+            <img src="{{ item.product.image.url }}" width="100">
+        </td>
+
+        <td>
+            {{ item.product.name }}
+        </td>
+
+        <td>
+            {{ item.quantity }} x {{ item.product.price }}
+        </td>
+
+        <td>
+            {{ item.total_price }}
+        </td>
+
+    
+    </tr>
+    {% endfor %}
+</table>
+<p> Итого: {{ cart_total_sum }} </p>
+{% else %}
+<p>Ваша корзина пуста</p>
+{% endif %}

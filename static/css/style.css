@@ -1,0 +1,23 @@
+h1 {
+    color: red;
+}
+
+.home_body h1 {
+    color: green;
+}
+
+.catalog_body h1 {
+    color: blue;
+}
+
+label {
+    margin-right: 20px;
+}
+
+.btn-nonempty {
+    background-color: red;
+}
+
+.btn-empty {
+    background-color: grey;
+}

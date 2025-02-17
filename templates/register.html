@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register</title>
+</head>
+<body>
+
+<h2>Register</h2>
+<form method="POST" class="form">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Register</button>
+</form>
+</body>
+</html>
+
+<style>
+    /* Основной контейнер формы */
+    .form {
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Стили для label */
+    .form label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+        font-size: 14px;
+        color: #333;
+    }
+
+    /* Стили для всех input полей */
+    .form input {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 14px;
+        box-sizing: border-box;
+    }
+
+    /* Стили для email input (если нужно выделить) */
+    .form input[type="email"] {
+        border-color: #007bff;
+        background-color: #eef6ff;
+    }
+
+    /* Стили для кнопки */
+    .form .btn {
+        display: inline-block;
+        width: 100%;
+        padding: 10px;
+        background-color: #4CAF50;
+        color: white;
+        text-align: center;
+        font-size: 16px;
+        font-weight: bold;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    /* Эффект наведения для кнопки */
+    .form .btn:hover {
+        background-color: #45a049;
+    }
+
+    /* Стили для help_text */
+    .form .helptext {
+        font-size: 12px;
+        color: #777;
+        margin-bottom: 10px;
+    }
+
+    /* Стили для ошибок */
+    .form .errorlist {
+        color: red;
+        font-size: 13px;
+        margin-bottom: 10px;
+    }
+</style>

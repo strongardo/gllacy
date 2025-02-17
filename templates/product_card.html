@@ -1,0 +1,20 @@
+<li class="product"
+    data-popularity="{{ product.is_hit|yesno:'true,false' }}"
+    data-price="{{ product.price }}"
+    data-fat="{{ product.fat }}">
+    <img src="{{ product.image.url }}" alt="{{ product.name }}" width="100">
+    <p>{{ product.name }}</p>
+    <p>{{ product.price }}</p>
+    <p>{{ product.fat }}</p>
+    <p>{{ product.is_hit }}</p>
+    <ul>
+        {% for filler in product.fillers.all %}
+        <li>{{ filler.name }}</li>
+        {% endfor %}
+    </ul>
+    {% if user.is_authenticated %}
+    <a href="{% url 'add_to_cart' product.id %}" class="add-to-cart">Добавить в корзину</a>
+    {% else %}
+    <p>Для добавления в корзину нужно <a href="{% url 'login' %}">войти</a>.</p>
+    {% endif %}
+</li>
