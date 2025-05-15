@@ -1,22 +1,22 @@
  // Инициализация noUiSlider
-    const slider = document.getElementById('price-slider');
-    const minValue = document.getElementById('price-min');
-    const maxValue = document.getElementById('price-max');
-    const minPriceInput = document.getElementById('min-price-input');
-    const maxPriceInput = document.getElementById('max-price-input');
+const slider = document.getElementById('price-slider');
+const minValue = document.getElementById('price-min');
+const maxValue = document.getElementById('price-max');
+const minPriceInput = document.getElementById('min-price-input');
+const maxPriceInput = document.getElementById('max-price-input');
 
-    noUiSlider.create(slider, {
-        start: [100, 500], // начальные значения
-        connect: true, // соединение между ползунками
-        range: {
-            min: 100, // минимальное значение
-            max: 700  // максимальное значение
-        },
-        step: 1, // шаг изменения значений
-    });
+noUiSlider.create(slider, {
+    start: [100, 500], // начальные значения
+    connect: true, // соединение между ползунками
+    range: {
+        min: 100, // минимальное значение
+        max: 700  // максимальное значение
+    },
+    step: 1, // шаг изменения значений
+});
 
-    // Подключаем обработчик события "update" для слайдера
-    slider.noUiSlider.on('update', function (values, handle) {
+// Подключаем обработчик события "update" для слайдера
+slider.noUiSlider.on('update', function (values, handle) {
     // values: массив текущих значений ползунков [минимум, максимум]
     // handle: индекс обновленного ползунка (0 — левый, 1 — правый)
 
