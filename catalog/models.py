@@ -26,4 +26,4 @@ class Product(models.Model):
     image = models.ImageField(upload_to='products/', blank=False, null=False)
     is_hit = models.BooleanField(default=False)
     fat = models.IntegerField(blank=False, null=False, default=0)
-    fillers = models.ManyToManyField(Filler, related_name='products', blank=True, null=True)
+    fillers = models.ManyToManyField(Filler, related_name='products', blank=True)
